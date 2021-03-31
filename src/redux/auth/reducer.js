@@ -8,12 +8,10 @@ const initialState = {
 export default function authReducer(state = initialState, action) {
   switch (action.type) {
     case AUTH_LOGIN: {
-      const resp = {
+      return {
         loggedIn: true,
         user: { ...action.payload.user },
       };
-
-      return resp;
     }
     case AUTH_LOGOUT: {
       return {
