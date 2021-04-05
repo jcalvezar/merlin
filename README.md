@@ -2,7 +2,7 @@
 
 Para comenzar clone el repositorio
 
-### `git clone xxxxx`
+### `git clone https://github.com/jcalvezar/merlin`
 
 Luego ingrese a la carpeta e instale los packetes necesarios
 
