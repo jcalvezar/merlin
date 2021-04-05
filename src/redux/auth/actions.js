@@ -1,4 +1,5 @@
 import { AUTH_LOGIN, AUTH_LOGOUT } from "./actionTypes";
+import { setData } from "../data/actions";
 
 const authLogin = (user) => {
   return { type: AUTH_LOGIN, payload: { user } };
@@ -15,8 +16,14 @@ export const tryLogin = (userInfo) => async (dispatch) => {
   });
 
   const res = await response.json();
-  console.log("DATA: ", res.user);
-  dispatch(authLogin(res.user));
+
+  if (Object.keys(res.user).length > 0) {
+    dispatch(authLogin(res.user));
+    dispatch(setData(res.data));
+    //console.log("DATA ", res.data);
+  } else {
+    console.log("Login Faliure");
+  }
 };
 
 export const authLogout = () => {

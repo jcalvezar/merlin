@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Album() {
   const classes = useStyles();
   const { user } = useSelector((state) => state.authReducer);
+
   const dispatch = useDispatch();
   let history = useHistory();
 

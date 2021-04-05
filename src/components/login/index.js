@@ -17,6 +17,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { tryLogin } from "../../redux/auth/actions";
 import Copyright from "../Copyright";
 import SysName from "../SysName";
+import md5 from "md5";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,7 +64,7 @@ export default function SignInSide() {
   };
 
   const handlePasswordChange = (e) => {
-    user.password = e.target.value;
+    user.password = md5(e.target.value);
   };
 
   const handleButtonClick = () => {

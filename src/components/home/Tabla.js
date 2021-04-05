@@ -7,6 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import { useSelector } from "react-redux";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -26,18 +27,6 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(name, calories, fat, carbs, protein, ajuste) {
-  return { name, calories, fat, carbs, protein, ajuste };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0, 0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3, 0),
-  createData("Eclair", 262, 16.0, 24, 6.0, 0),
-  createData("Cupcake", 305, 3.7, 67, 4.3, 0),
-  createData("Gingerbread", 356, 16.0, 49, 3.9, 0),
-];
-
 const useStyles = makeStyles({
   table: {
     minWidth: 700,
@@ -46,6 +35,9 @@ const useStyles = makeStyles({
 
 export default function CustomizedTables() {
   const classes = useStyles();
+  const { data } = useSelector((state) => state.dataReducer);
+
+  console.log("table data ", data);
 
   return (
     <TableContainer component={Paper}>
@@ -61,16 +53,16 @@ export default function CustomizedTables() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
+          {data.map((row, idx) => (
+            <StyledTableRow key={idx}>
               <StyledTableCell component="th" scope="row">
                 {row.name}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
-              <StyledTableCell align="right">{row.ajuste}</StyledTableCell>
+              <StyledTableCell align="right">1</StyledTableCell>
+              <StyledTableCell align="right">2</StyledTableCell>
+              <StyledTableCell align="right">3</StyledTableCell>
+              <StyledTableCell align="right">4</StyledTableCell>
+              <StyledTableCell align="right">5</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
