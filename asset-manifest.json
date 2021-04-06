@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/merlin/static/js/main.52cd806c.chunk.js",
-    "main.js.map": "/merlin/static/js/main.52cd806c.chunk.js.map",
+    "main.js": "/merlin/static/js/main.7f34c32e.chunk.js",
+    "main.js.map": "/merlin/static/js/main.7f34c32e.chunk.js.map",
     "runtime-main.js": "/merlin/static/js/runtime-main.0f87d2f5.js",
     "runtime-main.js.map": "/merlin/static/js/runtime-main.0f87d2f5.js.map",
     "static/js/2.c6525e4a.chunk.js": "/merlin/static/js/2.c6525e4a.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.0f87d2f5.js",
     "static/js/2.c6525e4a.chunk.js",
-    "static/js/main.52cd806c.chunk.js"
+    "static/js/main.7f34c32e.chunk.js"
   ]
 }
