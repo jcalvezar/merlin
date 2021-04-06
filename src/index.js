@@ -11,10 +11,10 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <Switch>
-        <ProtectedRoute path="/" exact>
+        <ProtectedRoute path="/home" exact>
           <HomePage />
         </ProtectedRoute>
-        <Route path="/login" exact>
+        <Route path="/" exact>
           <LoginPage />
         </Route>
       </Switch>

@@ -74,7 +74,7 @@ export default function SignInSide() {
 
   useEffect(() => {
     if (loggedIn) {
-      history.push("/");
+      history.push("/home");
     }
   }, [loggedIn]);
 
