@@ -11,8 +11,8 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authLogout } from "../../redux/auth/actions";
 import CasinosTable from "./Tabla";
-import Copyright from "../Copyright";
-import SysName from "../SysName";
+import Copyright from "../common/Copyright";
+import SysName from "../common/SysName";
 
 const useStyles = makeStyles((theme) => ({
   icon: {

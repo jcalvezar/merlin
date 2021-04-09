@@ -3,11 +3,11 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/common/ProtectedRoute";
 import AuthPage from "./components/auth";
 import HomePage from "./components/home";
 import LandingPage from "./components/landing";
-import Layout from "./components/Layout";
+import Layout from "./components/common/Layout";
 
 ReactDOM.render(
   <Provider store={store}>

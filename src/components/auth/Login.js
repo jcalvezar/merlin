@@ -12,7 +12,7 @@ import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import { useDispatch } from "react-redux";
 import { tryLogin } from "../../redux/auth/actions";
-import SysName from "../SysName";
+import SysName from "../common/SysName";
 import md5 from "md5";
 import { Link as RouterLink } from "react-router-dom";
 
