@@ -5,14 +5,13 @@ import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
-import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import { useDispatch } from "react-redux";
 import { tryLogin } from "../../redux/auth/actions";
-import Copyright from "../Copyright";
 import SysName from "../SysName";
 import md5 from "md5";
 import { Link as RouterLink } from "react-router-dom";
@@ -56,68 +55,67 @@ export default function SignInSide() {
   };
 
   return (
-    <div className={classes.paper}>
-      <Avatar className={classes.avatar}>
-        <LockOutlinedIcon />
-      </Avatar>
-      <Typography component="h1" variant="h5">
-        Ingreso al <SysName />
-      </Typography>
-      <form className={classes.form} noValidate>
-        <TextField
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          id="email"
-          label="Dirección de Email"
-          name="email"
-          autoComplete="email"
-          autoFocus
-          onChange={handleEmailChange}
-        />
-        <TextField
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          name="password"
-          label="Contraseña"
-          type="password"
-          id="password"
-          autoComplete="current-password"
-          onChange={handlePasswordChange}
-        />
-        <FormControlLabel
-          control={<Checkbox value="remember" color="primary" />}
-          label="Recordar Ingreso"
-        />
-        <Button
-          type="button"
-          fullWidth
-          variant="contained"
-          color="primary"
-          className={classes.submit}
-          onClick={handleButtonClick}
-        >
-          Ingresar
-        </Button>
-        <Grid container>
-          <Grid item xs>
-            <Link component={RouterLink} to="/auth/recupero" variant="body2">
-              Olvidó la clave?
-            </Link>
+    <Container maxWidth="sm" component="main" className={classes.heroContent}>
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Ingreso al <SysName />
+        </Typography>
+        <form className={classes.form} noValidate>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Dirección de Email"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            onChange={handleEmailChange}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Contraseña"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            onChange={handlePasswordChange}
+          />
+          <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Recordar Ingreso"
+          />
+          <Button
+            type="button"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+            onClick={handleButtonClick}
+          >
+            Ingresar
+          </Button>
+          <Grid container>
+            <Grid item xs>
+              <Link component={RouterLink} to="/auth/recupero" variant="body2">
+                Olvidó la clave?
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link component={RouterLink} to="/auth/registro" variant="body2">
+                {"No tiene cuenta? Registrarse"}
+              </Link>
+            </Grid>
           </Grid>
-          <Grid item>
-            <Link component={RouterLink} to="/auth/registro" variant="body2">
-              {"No tiene cuenta? Registrarse"}
-            </Link>
-          </Grid>
-        </Grid>
-        <Box mt={5}>
-          <Copyright />
-        </Box>
-      </form>
-    </div>
+        </form>
+      </div>
+    </Container>
   );
 }

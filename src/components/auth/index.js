@@ -11,7 +11,7 @@ import RegisterPage from "./Register";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100vh",
+    //height: "100vh",
   },
   image: {
     backgroundImage: "url(/merlin.jpg)",
@@ -46,20 +46,17 @@ export default function SignInSide() {
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className={classes.image} />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-        <Switch>
-          <Route exact path={path}>
-            <LoginPage />
-          </Route>
-          <Route path={`${path}/registro`}>
-            <RegisterPage />
-          </Route>
-          <Route path={`${path}/recupero`}>
-            <ForgetPage />
-          </Route>
-        </Switch>
-      </Grid>
+      <Switch>
+        <Route exact path={path}>
+          <LoginPage />
+        </Route>
+        <Route path={`${path}/registro`}>
+          <RegisterPage />
+        </Route>
+        <Route path={`${path}/recupero`}>
+          <ForgetPage />
+        </Route>
+      </Switch>
     </Grid>
   );
 }
